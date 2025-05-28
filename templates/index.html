@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VGSales Region Predictor</title>
+</head>
+<body>
+    <h2>Enter Game Details</h2>
+
+    <form action="/predict" method="post">
+        <label>Platform:</label>
+        <select name="platform" required>
+            {% for p in platforms %}
+                <option value="{{ p }}">{{ p }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label>Genre:</label>
+        <select name="genre" required>
+            {% for g in genres %}
+                <option value="{{ g }}">{{ g }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label>Publisher:</label>
+        <select name="publisher" required>
+            {% for pub in publishers %}
+                <option value="{{ pub }}">{{ pub }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label>Release Year:</label>
+        <input type="number" name="year" min="1980" max="2035" required>
+        <br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>

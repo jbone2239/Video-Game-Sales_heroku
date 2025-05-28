@@ -1,0 +1,14 @@
+# Ignore virtual environments
+flaskenv/
+venv/
+env/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore model files 
+*.pkl
+
+# Ignore Jupyter Notebooks 
+*.ipynb
